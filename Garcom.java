@@ -3,31 +3,30 @@ import java.util.ArrayList;
 public class Garcom extends Funcionario {
 
     private ArrayList<Mesa> mesas;
+    private double gorjetasRecebidas;
 
     public Garcom(String nome){
         super(nome, 1500);
         mesas = new ArrayList<>();
+        gorjetasRecebidas = 0;
     }
 
     public void anotarPedido(Pedido pedido){
         System.out.println("Pedido anotado.");
-        mesas = new ArrayList<>();
     }
 
     public void gorjeta(double gorjeta){
-        this.salario += gorjeta;
+        this.gorjetasRecebidas += gorjeta;
     }
 
     public double getGorjetasRecebidas(){
-        return (this.salario - 1500);
-    }
-
-    public String getNome(){
-        return this.nome;
+        return gorjetasRecebidas;
     }
 
     public void atribuirMesa(Mesa mesa){ 
-        mesas.add(mesa); 
+        if (!mesas.contains(mesa)) {
+            mesas.add(mesa);
+        }
     }
 
     public int getQuantidadeMesas() {

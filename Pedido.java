@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.List;
 
 public class Pedido {
 
@@ -10,10 +11,13 @@ public class Pedido {
     public Pedido() {
         pratos = new ArrayList<>();
         status = "Aberto";
-        pedidos++;
     }
 
     public void adicionarPrato(Prato prato){
+        if (pratos.isEmpty()) {
+            pedidos++;
+        }
+
         pratos.add(prato);
         prato.foiPedido();
     }
@@ -28,6 +32,22 @@ public class Pedido {
         return total;
     }
 
+    public boolean estaVazio(){
+        return pratos.isEmpty();
+    }
+
+    public boolean estaPago(){
+        return "Pago".equals(status);
+    }
+
+    public boolean estaPronto(){
+        return "Pronto".equals(status);
+    }
+
+    public List<Prato> getPratos(){
+        return new ArrayList<>(pratos);
+    }
+
     public void setStatus(String status){
         this.status = status;
     }
@@ -36,7 +56,7 @@ public class Pedido {
         return status;
     }
 
-    public void setFaturamento(double faturamento){
+    public void adicionarFaturamento(double faturamento){
         Pedido.faturamento += faturamento;
     }
 

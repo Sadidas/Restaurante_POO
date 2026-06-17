@@ -9,6 +9,10 @@ public abstract class Funcionario {
 
     public abstract void trabalhar();
 
+    public String getNome(){
+        return this.nome;
+    }
+
     public double getSalario(){
         return this.salario;
     }
