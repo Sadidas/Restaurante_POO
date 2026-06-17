@@ -1,3 +1,7 @@
+package restaurante.modelo;
+
+import restaurante.funcionarios.Garcom;
+
 public class Mesa {
 
     private int numero;
@@ -21,12 +25,12 @@ public class Mesa {
         return numero;
     }
 
-    public void setGarcom(Garcom garcom){
+    public void setGarcom(Garcom garcom) {
         this.garcom = garcom;
         garcom.atribuirMesa(this);
     }
 
-    public void adicionarPrato(Prato prato){
+    public void adicionarPrato(Prato prato) {
         if (pedido.estaPago()) {
             pedido = new Pedido();
         }
@@ -35,8 +39,8 @@ public class Mesa {
         pedido.setStatus("Aberto");
     }
 
-    public void pagarConta(){
-        if(pedido != null){
+    public void pagarConta() {
+        if (pedido != null) {
             if (garcom == null) {
                 System.out.println("Mesa " + numero + " nao possui garcom atribuido.");
                 return;

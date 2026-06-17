@@ -1,4 +1,8 @@
+package restaurante.funcionarios;
+
 import java.util.List;
+import restaurante.modelo.Pedido;
+import restaurante.modelo.Prato;
 
 public class Gerente extends Funcionario {
 

@@ -1,4 +1,9 @@
+package restaurante;
+
 import java.util.Scanner;
+import restaurante.funcionarios.Cozinheiro;
+import restaurante.funcionarios.Gerente;
+import restaurante.servico.Restaurante;
 
 public class Main {
     private static Scanner scanner = new Scanner(System.in);
@@ -54,7 +59,7 @@ public class Main {
         System.out.println("10 - Preparar pedido");
         System.out.println("11 - Pagar conta");
         System.out.println("12 - Relatorio gerencial");
-        System.out.println("13 - Demonstrar polimorfismo");
+        System.out.println("13 - Funcionarios em atividade");
         System.out.println("0 - Sair");
     }
 
@@ -97,7 +102,7 @@ public class Main {
                 restaurante.gerarRelatorio();
                 break;
             case 13:
-                restaurante.demonstrarPolimorfismo();
+                restaurante.listarFuncionariosEmAtividade();
                 break;
             case 0:
                 System.out.println("Sistema encerrado.");

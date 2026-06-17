@@ -1,5 +1,13 @@
+package restaurante.servico;
+
 import java.util.ArrayList;
 import java.util.List;
+import restaurante.funcionarios.Cozinheiro;
+import restaurante.funcionarios.Funcionario;
+import restaurante.funcionarios.Garcom;
+import restaurante.funcionarios.Gerente;
+import restaurante.modelo.Mesa;
+import restaurante.modelo.Prato;
 
 public class Restaurante {
     private List<Mesa> mesas;
@@ -182,7 +190,7 @@ public class Restaurante {
         gerente.gerarRelatorio(cardapio, garcons);
     }
 
-    public void demonstrarPolimorfismo() {
+    public void listarFuncionariosEmAtividade() {
         List<Funcionario> funcionarios = new ArrayList<>();
         funcionarios.addAll(garcons);
         funcionarios.add(cozinheiro);
